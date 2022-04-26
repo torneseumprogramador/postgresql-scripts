@@ -97,7 +97,9 @@ pg_dump -U meu_usuario -d meu_banco > meubanco_bkp.sql
 
 # Restaurar backup
 ```shell
-pg_restore -U meu_usuario -d meu_banco -1 ~/Downloads/meubanco_bkp.sql
+psql -U danilo -d meu_banco < meubanco_bkp.sql
+
+pg_restore -U meu_usuario -d meu_banco ~/Downloads/meubanco_bkp.sql
 ```
 
 # Parar serviço postgressql no mac

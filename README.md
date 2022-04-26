@@ -92,7 +92,7 @@ SELECT datname FROM pg_database; # mostra nome das databases
 
 # Gerar backup
 ```shell
-pg_dump -U meu_usuario -d meu_usuario > meubanco_bkp.sql
+pg_dump -U meu_usuario -d meu_banco > meubanco_bkp.sql
 ```
 
 # Restaurar backup

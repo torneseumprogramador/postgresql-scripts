@@ -127,6 +127,23 @@ CREATE TABLE accounts (
 );
 ```
 
+# Insert data
+```sql
+insert into accounts (username, "password", email, created_on, last_login)
+values ('danilo', '123', 'danilo@teste.com', '2022-04-26 10:00:00', '2022-04-26 10:00:00')
+```
+
+# update data
+```sql
+update accounts set created_on = '2022-04-26 10:10:00'
+where user_id = 4
+```
+
+# delete data
+```sql
+delete from accounts where user_id = 4;
+```
+
 # data type
 - https://www.postgresql.org/docs/current/datatype.html
 

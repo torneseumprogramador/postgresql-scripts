@@ -1,22 +1,23 @@
 
-# downnload mongo e descompactar
-curl https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-5.0.6.tgz
+# Instalar
+https://www.postgresql.org/download/macosx/
 
-# Mac
-https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/
+# no bashrc, alias para start
+```shell
+vim ~/.bash_profile
 
-# Linux (ubuntu)
-https://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
+# conteúdo 
+alias "postgre_start= postgres -D /usr/local/var/postgres_12"
 
-# Windows
-https://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/
+source ~/.bash_profile
+```
 
-
-# no bashrc
-alias "start_mongodb= ~/mongodb/bin/mongod --dbpath ~/mongodb/db/"
-alias "mongo= ~/mongodb/bin/mongo"
-alias "mongorestore= /Users/danilo/mongodb/bin/mongorestore"
-alias "mongodump= /Users/danilo/mongodb/bin/mongodump"
+# inicia diretório, start service, stop service
+```shell
+pg_ctl -D /usr/local/var/postgres_12 initdb
+pg_ctl -D /usr/local/var/postgres_12 start
+pg_ctl -D /usr/local/var/postgres_12 stop
+```
 
 # https://www.mongodb.com/pt-br/basics/create-database
 show dbs

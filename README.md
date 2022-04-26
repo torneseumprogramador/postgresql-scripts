@@ -55,13 +55,13 @@ CREATE USER danilo WITH ENCRYPTED PASSWORD '';
 ```
 
 # altera senha do usuário e dá permissão geral para usuario
-```postgressql
+```shell
 alter user meu_usuario with encrypted password 'minha_senha_123';
 grant all privileges on database meu_banco to meu_usuario;
 ```
 
 # alterando mais permissões para o usuario
-```postgressql
+```shell
 GRANT pg_read_all_data TO meu_usuario;
 GRANT pg_write_all_data TO meu_usuario;
 GRANT USAGE ON SCHEMA public TO meu_usuario;
@@ -75,18 +75,18 @@ ALTER USER meu_usuario WITH SUPERUSER;
 ```
 
 # Mostrar databases no client psql (show databases)
-```postgressql
+```shell
 \l+ # mostra tabela completa das databaes
 SELECT datname FROM pg_database; # mostra nome das databases
 ```
 
 # use database
-```postgressql
+```shell
 \c meu_banco; 
 ```
 
 # Mostrar tabelas no client psql (show tables)
-```postgressql
+```shell
 \dt+
 ```
 

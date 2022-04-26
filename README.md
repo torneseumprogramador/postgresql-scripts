@@ -158,10 +158,67 @@ select * from tabela order by campo asc
 ```
 
 # select group by
+- https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-group-by/
 ```sql
-select * from tabela order by campo desc
-select * from tabela order by campo asc
+SELECT 
+   column_1, 
+   column_2,
+   sum(column_3) as soma
+FROM 
+   table_name
+GROUP BY 
+   column_1,
+   column_2
+having 
+    sum(column_3) > 10
 ```
 
+# view
+- https://www.postgresql.org/docs/9.2/sql-createview.html
+```sql
+CREATE VIEW comedies AS
+    SELECT *
+    FROM films
+    WHERE kind = 'Comedy';
 
+select * from comedies
+```
+
+# procedure
+- https://www.postgresql.org/docs/current/sql-createprocedure.html
+```sql
+CREATE PROCEDURE insert_data(a integer, b integer)
+LANGUAGE SQL
+AS $$
+INSERT INTO tbl VALUES (a);
+INSERT INTO tbl VALUES (b);
+$$;
+```
+### or
+```sql
+CREATE PROCEDURE insert_data(a integer, b integer)
+LANGUAGE SQL
+BEGIN ATOMIC
+  INSERT INTO tbl VALUES (a);
+  INSERT INTO tbl VALUES (b);
+END;
+```
+### chamada
+```sql
+CALL insert_data(1, 2);
+```
+
+# function
+- https://www.postgresql.org/docs/current/sql-createfunction.html
+```sql
+CREATE OR REPLACE FUNCTION increment(i integer) RETURNS integer AS $$
+BEGIN
+    RETURN i + 1;
+END;
+$$ LANGUAGE plpgsql;
+```
+### chamada
+```sql
+select id, nome, increment(tamanho) from usuario;
+```
 

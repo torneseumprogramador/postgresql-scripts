@@ -24,6 +24,11 @@ pg_ctl -D /usr/local/var/postgres_12 stop
 psql
 ```
 
+# sair do client
+```shell
+\q
+```
+
 # Criar banco de dados
 ```shell
 createdb meu_banco

@@ -110,3 +110,58 @@ pg_ctl -D /usr/local/var/postgres stop
 pg_ctl -D /usr/local/var/postgres start
 ```
 
+# Client SGDB
+- https://dbeaver.io/download/
+
+# Create table
+```sql
+CREATE TABLE accounts (
+	user_id serial PRIMARY KEY,
+	username VARCHAR ( 50 ) UNIQUE NOT NULL,
+	password VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) UNIQUE NOT NULL,
+	created_on TIMESTAMP NOT NULL,
+    last_login TIMESTAMP 
+);
+```
+
+# data type
+- https://www.postgresql.org/docs/current/datatype.html
+
+# alter table
+- https://www.postgresql.org/docs/current/sql-altertable.html
+```sql
+ALTER TABLE distributors ALTER COLUMN name TYPE varchar(100);
+```
+
+# select table
+```sql
+select * from tabela;
+```
+
+# select join
+```sql
+select tabela.* from tabela
+inner join tabela2 on tabela2.campo_id = tabela.id;
+
+select tabela.* from tabela
+left join tabela2 on tabela2.campo_id = tabela.id;
+
+select tabela.* from tabela
+right join tabela2 on tabela2.campo_id = tabela.id;
+```
+
+# select order
+```sql
+select * from tabela order by campo desc
+select * from tabela order by campo asc
+```
+
+# select group by
+```sql
+select * from tabela order by campo desc
+select * from tabela order by campo asc
+```
+
+
+

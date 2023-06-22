@@ -23,6 +23,10 @@ pg_ctl -D /usr/local/var/postgres_12 stop
 ```shell
 psql
 ```
+# acessar client
+```shell
+sudo su - postgres psql
+```
 
 # sair do client
 ```shell

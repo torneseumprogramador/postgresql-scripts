@@ -94,6 +94,11 @@ SELECT datname FROM pg_database; # mostra nome das databases
 \dt+
 ```
 
+# Mostrar a tabela no psql (desc table)
+```shell
+\d tabela
+```
+
 # Gerar backup
 ```shell
 pg_dump -U meu_usuario -d meu_banco > meubanco_bkp.sql
